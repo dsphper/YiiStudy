@@ -9,7 +9,7 @@ Yii框架的路由以安全方面的研究
 1.1  加载 YiiBase.php,安装 autoload 方法;加载用户的配置文件;  
 1.2  创建 WebApp 应用,并对 App 进行初始化,加载部分组件,最后执行 WebApp  
 ##### Step2:控制器初始化与运行  
-2.1  加载 request 组件,加载 Url 管理组件,获得路由信息 ``route=ControllerId/ActionId  ``
+2.1  加载 request 组件,加载 Url 管理组件,获得路由信息 `route=ControllerId/ActionId`  
 2.2  创建出控制器实例,并运行控制器  
 ##### Step3:控制器初始化与运行  
 3.1  根据路由创建出 Action  
