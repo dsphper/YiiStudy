@@ -60,9 +60,9 @@ Web开发中不可避免的要使用到URL。用得最多的，就是生成一�
 在这里我简单的实现了一个框架[传送门](https://github.com/dsphper/YiiStudy/blob/master/framework.php)  
 ![流程图](http://i3.tietuku.com/c579bc76a3de85e9.png)  
 
-上面的流程图, 简单的展示了框架是如何分配控制器以及方法的.
+上面的流程图, 简单的展示了框架是如何分配控制器以及方法的.  
 如果看懂了上面的逻辑图, 那么对咱们下面学习如何处理Path参数的学习,会更加快速.  
-如上图所示的无论用户传入的是怎么样美化过的URL最终都需要被转化为$_GET的参数.
+如上图所示的无论用户传入的是怎么样美化过的URL最终都需要被转化为$_GET的参数.  
 大家都知道, $_GET这个全局变量里面的参数实际是PHP帮咱们进行`QueryString`的拆分. 
 并且PHP只支持`QueryString`的自动处理.
 如果大家把框架的Path模式关闭, 直接以"http://www.xxxxx.com/index.php/admin/admin/index/id/1231"这种方式访问.  
