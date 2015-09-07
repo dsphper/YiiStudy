@@ -21,7 +21,8 @@ Yii框架的路由以安全方面的研究
 4.2、 渲染注册的 javascript 和 css  
 
 ### Yii原理详解
-#### <a name="dongtaijiazai">动态按需加载
+#### <a name="route"></a>路由原理
+#### <a name="dongtaijiazai"></a>动态按需加载
 
  
  
