@@ -44,8 +44,10 @@ Web开发中不可避免的要使用到URL。用得最多的，就是生成一�
 方式的传参是完全等价的, 至于这里的如果有想深入的同学可以去研究下`http协议规范`,这里附上3个网站 
 > * http://www.opendl.com/openxml/w3/
 > * http://www.w3china.org/index.htm
-> * http://www.ietf.org/rfc/rfc2616.txt
-##### 不废话了 进入正题
+> * http://www.ietf.org/rfc/rfc2616.txt  
+
+##### 不废话了 进入正题  
+
 #### <a name="dongtaijiazai"></a>动态按需加载
 
  
