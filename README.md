@@ -25,7 +25,8 @@ Yii框架的路由以安全方面的研究
 ```
 Web开发中不可避免的要使用到URL。用得最多的，就是生成一个指向应用中其他某个页面的URL了。  
 开发者需要一个简洁的、集中的、统一的方法来完成这一过程。  
-而开发中最常用的架构就为`MVC`说到`MVC架构`, 就一定离不开`Route`这个概念,   
+而开发中最常用的架构就为`MVC`说到`MVC架构`, 就一定离不开`Route`这个概念;   
+```
 在之前访问一个网站的时候常常会出现以`QueryString` 方式出现的`url` 访问方式 ;   
 
 比如: `"http://www.xxxxx.com/index.php?m=index&c=index&a=login"` ;   
@@ -42,7 +43,7 @@ Web开发中不可避免的要使用到URL。用得最多的，就是生成一�
 > * http://www.opendl.com/openxml/w3/
 > * http://www.w3china.org/index.htm
 > * http://www.ietf.org/rfc/rfc2616.txt
-```
+
 #### <a name="dongtaijiazai"></a>动态按需加载
 
  
