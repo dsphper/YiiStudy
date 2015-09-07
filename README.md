@@ -74,6 +74,8 @@ var_dump($_SERVER['PATH_INFO']);
 // 直接打印这个函数, 将获得以下结果.
 string(26) "/admin/admin/index/id/1231"
 ```
+看到这里是不是
+<img src="http://img4q.duitang.com/uploads/item/201501/07/20150107194411_VQEAy.thumb.700_0.jpeg" width="200" height="200"/>
 #### <a name="dongtaijiazai"></a>动态按需加载
 
  
