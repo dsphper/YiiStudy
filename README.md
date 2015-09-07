@@ -65,9 +65,10 @@ Web开发中不可避免的要使用到URL。用得最多的，就是生成一�
 如上图所示的无论用户传入的是怎么样美化过的URL最终都需要被转化为$_GET的参数.  
 大家都知道, $_GET这个全局变量里面的参数实际是PHP帮咱们进行`QueryString`的拆分. 
 并且PHP只支持`QueryString`的自动处理.
-如果大家把框架的Path模式关闭, 直接以"http://www.xxxxx.com/index.php/admin/admin/index/id/1231"这种方式访问.  
-你去$_GET || $_POST || $_REQUEST 这几个全局变量里面是都无法获取到index.php往后的URI参数的, 那么这里该怎么获取呢?  
-然而世界上最好的语言早就为我们准备好解决方案了.
+如果大家直接以"http://www.xxxxx.com/index.php/admin/admin/index/id/1231"这种方式访问.  
+你去$_GET || $_POST || $_REQUEST 这几个全局变量里面是都无法获取到index.php往后的URI参数的.  
+那么这里该怎么获取呢?????????
+别担心, 世界上最好的语言已经为我们准备好解决方案了.
 ```php
 <?php
 var_dump($_SERVER['PATH_INFO']);
