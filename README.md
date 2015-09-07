@@ -22,6 +22,7 @@ Yii框架的路由以安全方面的研究
 
 ### Yii原理详解
 #### <a name="route"></a>路由原理
+##### 概念讲述 啰嗦一会
 ```
 Web开发中不可避免的要使用到URL。用得最多的，就是生成一个指向应用中其他某个页面的URL了。  
 开发者需要一个简洁的、集中的、统一的方法来完成这一过程。  
@@ -44,7 +45,7 @@ Web开发中不可避免的要使用到URL。用得最多的，就是生成一�
 > * http://www.opendl.com/openxml/w3/
 > * http://www.w3china.org/index.htm
 > * http://www.ietf.org/rfc/rfc2616.txt
-
+##### 不废话了 进入正题
 #### <a name="dongtaijiazai"></a>动态按需加载
 
  
