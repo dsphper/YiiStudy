@@ -57,6 +57,7 @@ Web开发中不可避免的要使用到URL。用得最多的，就是生成一�
 + a  -> action      -> 方法
 ```
 在这里我简单的实现了一个框架
+[传送门](https://github.com/dsphper/YiiStudy/blob/master/framework.php)
 #### <a name="dongtaijiazai"></a>动态按需加载
 
  
