@@ -43,7 +43,7 @@ class Core
 class Routes
 {
     //PathInfo 路由规则
-    static public function path_info()
+    static public function PathInfo()
     {
         $_GET['m'] = empty($_GET['m']) ? 'index' : $_GET['m'];
         $_GET['c'] = empty($_GET['c']) ? 'index' : $_GET['c'];
