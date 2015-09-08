@@ -4,7 +4,28 @@ Yii框架的路由以安全方面的研究
 * 其中抽象类共有`10`个
 * 接口类共有`15`个  
 * 其余全为动态按需加载 详情见: <a href="#user-content-dongtaijiazai">动态加载原理</a> 
+### Yii框架目录结构
+```php
+.
+├── base // 底层核心类库
+├── caching // 所有的缓冲存放的位置
+├── cli // 项目命令行生成脚本
+├── collections
+├── console
+├── db
+├── gii
+├── i18n
+├── logging
+├── messages
+├── test
+├── utils
+├── validators
+├── vendors
+├── views
+├── web
+└── zii
 
+```
 ### 框架加载与运行流程  
 ##### Step1:WebApp 初始化与运行  
 1.1、 加载 `YiiBase.php`,安装 `autoload` 方法;加载用户的配置文件;  
