@@ -11,7 +11,7 @@ Yii框架的路由以安全方面的研究
 ├── base // 底层核心类库
 ├── caching // 所有的缓冲存放的位置
 ├── cli // 项目命令行生成脚本
-├── collections
+├── collections // PHP语言构造的数据存储单元.队列,栈,哈希等等......
 ├── console
 ├── db
 ├── gii
