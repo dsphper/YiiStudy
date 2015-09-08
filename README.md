@@ -82,7 +82,7 @@ string(26) "/admin/admin/index/id/1231"
 下面这个函数就展了如何将Path参数转换为QueryString 存放到GET里面
 ```php
 //PathInfo 路由规则
-static public function path_info()
+function path_info()
 {
 	$_GET['m'] = empty($_GET['m']) ? 'index' : $_GET['m'];
 	$_GET['c'] = empty($_GET['c']) ? 'index' : $_GET['c'];
@@ -119,6 +119,8 @@ static public function path_info()
 	}
 }
 ```
+到这里核心原理已经讲解的差不多了, 后面其他的一些功能比如rules的控制, 自定义url美化规则......等等都可以在这个函数的基础上继续添加只需要最后保证参数m与参数c与参数a最终能获得正确的值就可以.
+咱们接下来看一下Yii框架为咱们提供了那些Route功能.
 #### <a name="dongtaijiazai"></a>动态按需加载
 
  
