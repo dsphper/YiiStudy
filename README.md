@@ -104,12 +104,10 @@ string(26) "/admin/admin/index/id/1231"
 下面这个函数就展了如何将Path参数转换为QueryString 存放到GET里面
 ```php
 //PathInfo 路由规则
-function path_info()
+function PathInfo()
 {
 	$_GET['m'] = empty($_GET['m']) ? 'index' : $_GET['m'];
 	$_GET['c'] = empty($_GET['c']) ? 'index' : $_GET['c'];
-	//执行l 路由规则
-	self::Lroute();
 	!empty($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] = $_SERVER['PATH_INFO'];
 	if (!empty($_SERVER['PATH_INFO'])) {
 		$path = $_SERVER['PATH_INFO'];
