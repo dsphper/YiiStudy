@@ -78,7 +78,7 @@ string(26) "/admin/admin/index/id/1231"
 看到这里是不是
 <img src="http://img4q.duitang.com/uploads/item/201501/07/20150107194411_VQEAy.thumb.700_0.jpeg" width="200" height="200"/>  
 
-看到这里大家是不是应该明白怎么做了?
+大家是不是知道应该怎么做了?
 下面这个函数就展了如何将Path参数转换为QueryString 存放到GET里面
 ```php
 //PathInfo 路由规则
