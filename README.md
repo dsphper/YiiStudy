@@ -65,7 +65,7 @@ Web开发中不可避免的要使用到URL。用得最多的，就是生成一�
 如上图所示的无论用户传入的是怎么样美化过的URL最终都需要被转化为$_GET的参数.  
 大家都知道, $_GET这个全局变量里面的参数实际是PHP帮咱们进行`QueryString`的拆分. 
 并且PHP只支持`QueryString`的自动处理.
-如果大家直接以"http://www.xxxxx.com/index.php/admin/admin/index/id/1231"这种方式访问.  
+如果大家直接以"http://www.xxxxx.com/index.php/admin/admin/index/id/1231"  这种方式访问.  
 你去$_GET || $_POST || $_REQUEST 这几个全局变量里面是都无法获取到index.php往后的URI参数的.  
 那么这里该怎么获取呢?????????  
 别担心, 世界上最好的语言已经为我们准备好解决方案了.
@@ -76,7 +76,49 @@ var_dump($_SERVER['PATH_INFO']);
 string(26) "/admin/admin/index/id/1231"
 ```
 看到这里是不是
-<img src="http://img4q.duitang.com/uploads/item/201501/07/20150107194411_VQEAy.thumb.700_0.jpeg" width="200" height="200"/>
+<img src="http://img4q.duitang.com/uploads/item/201501/07/20150107194411_VQEAy.thumb.700_0.jpeg" width="200" height="200"/>  
+
+看到这里大家是不是应该明白怎么做了?
+下面这个函数就展了如何将Path参数转换为QueryString 存放到GET里面
+```php
+//PathInfo 路由规则
+static public function path_info()
+{
+	$_GET['m'] = empty($_GET['m']) ? 'index' : $_GET['m'];
+	$_GET['c'] = empty($_GET['c']) ? 'index' : $_GET['c'];
+	//执行l 路由规则
+	self::Lroute();
+	!empty($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] = $_SERVER['PATH_INFO'];
+	if (!empty($_SERVER['PATH_INFO'])) {
+		$path = $_SERVER['PATH_INFO'];
+		$get  = explode('/', $path);
+		unset($get[0]);
+		foreach ($get as $key => $value) {
+			if ($key > 0) {
+				if (count($get) == 1) {
+					$_GET['c'] = $get[1];
+				} else if (count($get) == 2) {
+					$_GET['c'] = $get[1];
+					$_GET['a'] = $get[2];
+				} else if (count($get) > 2) {
+					$_GET['m'] = $get[1];
+					$_GET['c'] = $get[2];
+					$_GET['a'] = $get[3];
+				}
+			}
+			if (count($get) > 4) {
+				$param = array_slice($get, 3);
+				$param = array_filter($param);
+				for ($i = 0; $i < count($param); $i += 2) {
+					if ($param[$i] != 'm' && $param[$i] != 'a' && $param[$i] != 'c' && !empty($param[$i + 1])) {
+						$_GET[$param[$i]] = $param[$i + 1];
+					}
+				}
+			}
+		}
+	}
+}
+```
 #### <a name="dongtaijiazai"></a>动态按需加载
 
  
