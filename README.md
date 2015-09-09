@@ -144,10 +144,19 @@ function PathInfo()
 ##### Yii框架Url 配置项
 ```php
 'urlManager'=>array(
-	'urlFormat'=>'get', // 设置路由访问模式
-	'showScriptName' => false, // 
-	'rules'=>array( // URL 规则定义 非常的强大 可以随心所欲的自定义自己的URL规则
+	'urlFormat'=>'path', // 设置路由访问模式
+	'urlSuffix' => '.html', // 伪静态后缀
+	'showScriptName' => false, // 去掉 index.php (True | False)
+	'rules'=>array(  // URL 规则定义 非常的强大 可以随心所欲的自定义自己的URL规则
 		'post/<id:\d+>/<title:.*?>'=>'post/view',
+		'jun/<id:\d+>/<title:.*?>'=>'post/jun',
+		'haha/haha' => [
+			'post/jun',
+			'urlSuffix' => '.html', // 仅对生成url时有效
+			'defaultParams' => ['a'=>'v'], // 默认注入参数
+			'caseSensitive' => false, // 是否区分大小写
+			'verb' => 'GET' // 设置当前规则适用的场景 如GET POST PUT DELETE等等......
+		],
 		'posts/<tag:.*?>'=>'post/index',
 		'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 	),
