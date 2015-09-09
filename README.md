@@ -162,9 +162,6 @@ function PathInfo()
 	),
 ),
 ```
-可以看到上面存在了很多配置项, 下面咱们就一一探究每个配置项对应的功能是什么.
-在Yii框架中默认支持两种URL访问模式  
-
 ###### GET 方式
 ```url
 index.php?r=/post/jun/jun
@@ -173,7 +170,8 @@ index.php?r=/post/jun/jun
 ```url
 index.php/post/jun/jun
 ```
-如果想切换路由模式很简单只需要在配置项 `urlFormat` 这一项中将对应的 value 更改成 get || path 就可以了. (注意: 这里只支持输入小写字母)
+可以看到上面存在了很多配置项, 下面咱们就一一探究每个配置项对应的功能是什么.
+如果想切换路由模式很简单只需要在配置项 `urlFormat` 这一项中将对应的 value 更改成 get || path 就可以了.
 ###### rules 详解
 rules 是 Yii框架中URL管理器中非常强大的一个模块, 它提供了非常强大便捷URL 管理功能 ,下面咱么就一起来看一下它的使用规则.
 比如下面的这个配置能实现的效果是什么.
@@ -182,6 +180,7 @@ rules 是 Yii框架中URL管理器中非常强大的一个模块, 它提供了�
 	...
 	'rules'=>array(
 		'post/<id:\d+>/<title:.*?>'=>'post/view',
+		'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 		...
 	),
 ),
@@ -189,7 +188,9 @@ rules 是 Yii框架中URL管理器中非常强大的一个模块, 它提供了�
 ),
 
 ```
-可以看到上面的规则中出现了正则表达式, 那么这些标签个正则表达式实现的是什么效果呢
+在rules 这个key 中它对应这一个数组, 这个数组也是一个 key => value 的结构. 它可以定义多个规则, 只需要像正常数组一样往下写便可,  
+在key 中可以这么写'xxx/xxx/xxx' || '<xx:\d>'/xxxx/xxxx
+
 #### <a name="dongtaijiazai"></a>动态按需加载
 
  
