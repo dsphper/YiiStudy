@@ -173,7 +173,23 @@ index.php?r=/post/jun/jun
 ```url
 index.php/post/jun/jun
 ```
-如果想切换路由模式很简单只需要在配置项 `urlFormat` 这一项中将对应的 value 更改成 get || path 就可以了. (这里只支持输入小写字母)
+如果想切换路由模式很简单只需要在配置项 `urlFormat` 这一项中将对应的 value 更改成 get || path 就可以了. (注意: 这里只支持输入小写字母)
+###### rules 详解
+rules 是 Yii框架中URL管理器中非常强大的一个模块, 它提供了非常强大便捷URL 管理功能 ,下面咱么就一起来看一下它的使用规则.
+比如下面的这个配置能实现的效果是什么.
+```php
+'urlManager'=>array(
+	...
+	'rules'=>array(
+		'post/<id:\d+>/<title:.*?>'=>'post/view',
+		...
+	),
+),
+	),
+),
+
+```
+可以看到上面的规则中出现了正则表达式, 那么这些标签个正则表达式实现的是什么效果呢
 #### <a name="dongtaijiazai"></a>动态按需加载
 
  
