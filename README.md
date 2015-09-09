@@ -140,6 +140,31 @@ function PathInfo()
 ```
 到这里核心原理已经讲解的差不多了, 后面其他的一些功能比如rules的控制, 自定义url美化规则......等等都可以在这个函数的基础上继续添加只需要最后保证参数m与参数c与参数a最终能获得正确的值就可以.
 咱们接下来看一下Yii框架为咱们提供了那些Route功能.
+
+##### Yii框架Url 配置项
+```php
+'urlManager'=>array(
+	'urlFormat'=>'get', // 设置路由访问模式
+	'showScriptName' => false, // 
+	'rules'=>array( // URL 规则定义 非常的强大 可以随心所欲的自定义自己的URL规则
+		'post/<id:\d+>/<title:.*?>'=>'post/view',
+		'posts/<tag:.*?>'=>'post/index',
+		'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+	),
+),
+```
+可以看到上面存在了很多配置项, 下面咱们就一一探究每个配置项对应的功能是什么.
+在Yii框架中默认支持两种URL访问模式  
+
+###### GET 方式
+```url
+index.php?r=/post/jun/jun
+```
+###### Path 方式
+```url
+index.php/post/jun/jun
+```
+如果想切换路由模式很简单只需要在配置项 `urlFormat` 这一项中将对应的 value 更改成 get || path 就可以了. (这里只支持输入小写字母)
 #### <a name="dongtaijiazai"></a>动态按需加载
 
  
