@@ -189,7 +189,22 @@ rules 是 Yii框架中URL管理器中非常强大的一个模块, 它提供了�
 
 ```
 在rules 这个key 中它对应这一个数组, 这个数组也是一个 key => value 的结构. 它可以定义多个规则, 只需要像正常数组一样往下写便可,  
-在key 中可以这么写'xxx/xxx/xxx' || '<xx:\d>'/xxxx/xxxx
+```php
+	key 	=> URL规则
+	value 	=> 指向的控制器 
+```
+在key 中可以这么写'xxx/xxx/xxx' || '<xx:\d>/xxxx/xxxx'  
+
+在value 中可以这么写 'xxx/xxx/xxx' || '<xx>/xxx/xxx'  
+
+上面的两个实例可以组合成下面两个正常规则
+```php
+'rules'=>array(
+		'index/index/index'=>'admin/index/index', // 将 index/index/index 的用户访问 定向到 admin/index/index
+		'<model:\w+>/index/index'=>'<model>/post/view', // 这里面的<model> 会被替换成 <model: \w> 里面正则匹配到的内容.
+		...
+	),	
+```
 
 #### <a name="dongtaijiazai"></a>动态按需加载
 
