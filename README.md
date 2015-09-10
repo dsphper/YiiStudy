@@ -193,9 +193,9 @@ rules 是 Yii框架中URL管理器中非常强大的一个模块, 它提供了�
 	key 	=> URL规则
 	value 	=> 指向的控制器 
 ```
-在key 中可以这么写'xxx/xxx/xxx' || '<xx:\d>/xxxx/xxxx'  
+在`key`中可以这么写	`'xxx/xxx/xxx' || '<xx:\d>/xxxx/xxxx'  `
 
-在value 中可以这么写 'xxx/xxx/xxx' || '<xx>/xxx/xxx'  
+在`value`中可以这么	 `'xxx/xxx/xxx' || '<xx>/xxx/xxx'  `
 
 上面的两个实例可以组合成下面两个正常规则
 ```php
