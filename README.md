@@ -199,9 +199,9 @@ rules 是 Yii框架中URL管理器中非常强大的一个模块, 它提供了�
 
 上面的两个实例可以组合成下面两个正常规则
 ```php
-'rules'=>array(
-		'index/index/index'=>'admin/index/index', // 将 index/index/index 的用户访问 定向到 admin/index/index
-		'<model:\w+>/index/index'=>'<model>/post/view', // 这里面的<model> 会被替换成 <model: \w> 里面正则匹配到的内容.
+'rules' => array(
+		'index/index/index'        =>'admin/index/index', // 将 index/index/index 的用户访问 定向到 admin/index/index
+		'<model:\w+>/index/index'  =>'<model>/post/view', // 这里面的<model> 会被替换成 <model: \w> 里面正则匹配到的内容.
 		...
 	),	
 ```
