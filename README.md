@@ -206,7 +206,62 @@ rules 是 Yii框架中URL管理器中非常强大的一个模块, 它提供了�
 		...
 	),	
 ```
+###### 生成URL
+那么如何生成URL呢？很简单，在Yii框架中生成URL需要注意两点。
+* 在控制器中生成URL
+* 在layout中生成URL
+```php
+$url=$this->createUrl($route,$params);
+```
+$this指的是控制器实例; $route指定请求的route 的要求;$params 列出了附加在网址中的GET参数。
 
+默认情况下，URL以get格式使用createUrl 创建。例如，提供$route='post/read'和$params=array('test'=>123) ，我们将获得以下网址：
+```php
+/index.php?r=post/read&test=123
+```
+参数以一系列Name=Value通过符号串联起来出现在请求字符串，r参数指的是请求的route 。这种URL格式用户友好性不是很好，因为它需要一些非字字符。
+
+我们可以使上述网址看起来更简洁，更不言自明，通过采用所谓的'path格式，省去查询字符串和把GET参数加到路径信息，作为网址的一部分：
+```php
+/index.php/post/read/id/100
+```
+要更改URL格式，我们应该配置urlManager应用元件，以便createUrl可以自动切换到新格式和应用程序可以正确理解新的网址：
+```php
+array(
+    ......
+    'components'=>array(
+        ......
+        'urlManager'=>array(
+            'urlFormat'=>'path',
+        ),
+    ),
+);
+```
+请注意，我们不需要指定的urlManager元件的类，因为它在CWebApplication预声明为CUrlManager。
+
+createurl方法所产生的是一个相对地址。为了得到一个绝对的url ，我们可以用前缀yii">
+提示：此网址通过createurl方法所产生的是一个相对地址。为了得到一个绝对的url ，我们可以用前缀yii: :app()->hostInfo ，或调用createAbsoluteUrl 。
+#######2.User-friendly URLs（用户友好的URL）
+当用path格式URL，我们可以指定某些URL规则使我们的网址更用户友好性。例如，我们可以产生一个短短的URL/post/100 ，而不是冗长/index.php/post/read/id/100。网址创建和解析都是通过CUrlManager指定网址规则。
+
+要指定的URL规则，我们必须设定urlManager 应用元件的属性rules：
+```php
+array(
+    ......
+    'components'=>array(
+        ......
+        'urlManager'=>array(
+            'urlFormat'=>'path',
+            'rules'=>array(
+                'pattern1'=>'route1',
+                'pattern2'=>'route2',
+                'pattern3'=>'route3',
+            ),
+        ),
+    ),
+);
+```
+这里大家应该都懂怎么填了吧？
 #### <a name="dongtaijiazai"></a>动态按需加载
 
  
