@@ -3,7 +3,7 @@
 * 基础核心类共有`69`个
 * 其中抽象类共有`10`个
 * 接口类共有`15`个  
-* 其余全为动态按需加载 详情见: <a href="#user-content-dongtaijiazai">动态加载原理</a>   
+* 其余全为动态加载 详情见: <a href="#user-content-dongtaijiazai">动态加载原理</a>   
 * 全部类共有 `208`个
 
 ### Yii框架目录结构
